@@ -1,38 +1,810 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* all section main heading css start */
+.heading {
+  font-family: "Katibeh", serif;
+  font-weight: 400;
+  line-height: 35px !important;
   text-align: center;
+  color: #231942;
 }
+/* all section main heading css end */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* buy now button css start */
+.buynow-btn {
+  outline: none;
+  background: transparent;
+  width: 125.77px;
+  height: 37px;
+  border-radius: 10px;
+  border: 1px solid #516c76;
+  & a {
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    color: #516c76;
+  }
 }
+/* buy now button css end */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* all AddToCartWishlist css start */
+.cart {
+  width: 43px;
+  height: 43px;
+  padding: 9px 8px 8.3px 7px;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 5px 5px 40px 5px;
+  top: 469px;
+  left: 497px;
+}
+/* all AddToCartWishlist css end */
+
+/* swiper pagination css start */
+.swiper-pagination {
+  padding-inline: 25px;
+  text-align: center;
+  .swiper-pagination-total {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      top: 50%;
+      background: #f7b5a7;
+      margin-left: 10px;
+    }
+  }
+  .swiper-pagination-current {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      top: 50%;
+      right: 100%;
+      background: #f7b5a7;
+      margin-right: 10px;
+    }
+  }
+}
+/* swiper pagination css end */
+
+/* header section css start */
+
+.navbar {
+  padding: 10px 0px 0px 0px;
+  background-color: transparent;
+  position: fixed ;
+  width: 100%;
+  z-index: 1;
+
+  & img {
+    width: 100%;
+  }
+  .navbar-brand {
+    padding: 0px 15px 0px 30px;
+  }
+  .nav-link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.07px;
+  }
+  .nav-item {
+    padding-inline: 20px;
+    transition: all 0.8s ease;
+    &:hover .nav-link{
+      color:  #F1B7A2;
+    }
+  }
+  .navbar-icon {
+    & i {
+      margin-inline: 20px;
+    }
+  }
+  .navbar-toggler {
+    outline: #f1b7a2;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar-icon{
+    & a{
+      color: #000000;
+      transition: all 0.5s ease;
+      &:hover{
+        color:  #F1B7A2;
+      }
+    }
+  }
+}
+.fixed-navbar{
+  background-color: #ffffff;
+  .navbar-nav .nav-item{
+    .nav-link{
+      color: black;
+      &:hover{
+        color:  #F1B7A2;
+      }
+    }
+  }
+}
+/* header section css end */
+
+/* clean-fresh section css start */
+.clean-fresh-section {
+  position: relative;
+  .social-icon {
+    z-index: 99;
+    position: absolute;
+    right: 1%;
+    bottom: 0%;
+    & i {
+      margin-inline: 10px;
+    }
+    & a{
+      color: #000000;
+    }
+  }
+  .swiper-pagination {
+    text-align: left;
+    margin-left: 60px;
+    .swiper-pagination-total {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        top: 50%;
+        background: #f7b5a7;
+      }
+    }
+    .swiper-pagination-current {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        top: 50%;
+        right: 100%;
+        background: #f7b5a7;
+      }
+    }
+  }
+  .clean-fresh {
+    min-height: 100vh;
+    background: url("./assets/img/cleanFresh/slide1.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    
+    .clean-fresh-info {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      & h1 {
+        font-family: "Lexend Deca", sans-serif;
+        font-weight: 700;
+        line-height: 81.25px;
+      }
+      & h3 {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+  }
+}
+/* clean-fresh section css end */
+
+/* customer-favorites-section css start */
+.customer-favorites-section {
+  margin-top: 50px;
+  font-family: "Katibeh", serif;
+  .makeup-collection {
+    margin: 10px 0px;
+    border-radius: 10px;
+    padding: 100px 20px 30px 20px;
+    background: url("./assets/img/customersFavorites/makeup.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .lipstick-collection {
+    background: url("./assets/img/customersFavorites/lipstick.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .eyeliner-collection {
+    padding: 150px 10px;
+    margin-top: 10px;
+    background: url("./assets/img/customersFavorites/eyeliner.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+
+    .eyeliner-info {
+      margin-right: 50px;
+      position: absolute;
+      top: 50%;
+      right: 0%;
+    }
+  }
+
+  & h3 {
+    font-weight: 400;
+    line-height: 47.36px;
+    color: #231942;
+  }
+  & p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 11.1px;
+    letter-spacing: 0.18em;
+  }
+  & a {
+    font-family: Katibeh;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #264958;
+  }
+}
+/* customer-favorites-section css end */
+
+/* best-product-section css start */
+.best-product-section {
+  margin-top: 50px;
+  .best-product-card {
+    margin: 30px 0px 50px 0px;
+    border: 2px solid #e2e2e3;
+    border-radius: 0px 70px 70px 0px;
+  }
+  .best-product-info {
+    padding-left: 30px;
+    & h2 {
+      color: #55a47a;
+    }
+    & h3,
+    h2 {
+      font-family: "Katibeh", serif;
+    }
+    & p {
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #264958;
+      margin-bottom: 0px;
+      text-transform: uppercase;
+    }
+    & a {
+      color: #264958;
+      font-family: "Katibeh", serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  .best-product-img {
+    padding: 20px 0px 20px 0px;
+    border-left: 2px solid #e2e2e3;
+    text-align: center;
+  }
+}
+/* best-product-section css end */
+
+/* Popular-Product-Section css start */
+.popular-product-section {
+  margin-top: 50px;
+  .product-card {
+    padding-inline: 15px;
+  }
+  .product-box {
+    margin: 20px 0px 40px 0px;
+    padding: 20px 0px;
+    background: url("./assets/img/popularProduct/product-card-bg.png") no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px;
+
+    & h3 {
+      display: inline;
+      font-family: "Katibeh", serif;
+    }
+    & span {
+      border-radius: 0px 27.8px 27.8px 0px;
+      background: #d7f3e3;
+      padding: 25px 30px 10px 0px;
+    }
+    .star-icon {
+      & i {
+        color: #ffc530;
+        margin-right: 8px;
+      }
+    }
+    & h5 {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      color: #231942;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    & p {
+      color: #264958;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      line-height: 20px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+  }
+}
+/* Popular-Product-Section css end */
+
+/* combo-section css start */
+.combo-section {
+  padding-top: 50px;
+  .subheading {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .combo-box {
+    margin: 30px 0px 50px 0px;
+    .combo-card {
+      width: 90%;
+      margin: auto;
+      .combo-image {
+        padding: 35px 0px;
+      }
+      border: 2px solid #e2e2e3;
+      border-radius: 90px 90px 0px 0px;
+      & h2 {
+        font-family: "Katibeh", serif;
+        font-size: 42px;
+        font-weight: 400;
+        color: #55a47a;
+      }
+      & h3 {
+        font-family: "Katibeh", serif;
+        font-size: 35px;
+        font-weight: 400;
+        color: #231942;
+        line-height: 30px;
+      }
+      & p {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #264958;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+      }
+      .sub-title {
+        margin: 20px 0px 10px 0px;
+      }
+      .combo-info {
+        border-top: 2px solid #e2e2e3;
+        padding: 5px 0px 20px 25px;
+      }
+    }
+  }
+}
+/* combo-section css end */
+
+/* beauty-for-a-better-section css start */
+.beauty-for-a-better-section {
+  padding-top: 50px;
+  .start-icon {
+    position: relative;
+    padding: 0px 0px 50px 0px;
+  }
+  .star-icon-img {
+    position: absolute;
+    left: 23%;
+  }
+  & p {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #264958;
+  }
+  .experience {
+    margin: 30px 0px 0px 0px;
+    padding: 20px 0px 20px 20px;
+    background: linear-gradient(
+      89.79deg,
+      rgba(254, 248, 240, 0.84) 0.16%,
+      #d4f2e2 97.3%
+    );
+    border-radius: 0px 90px 90px 0px;
+
+    & h2 {
+      font-family: "Katibeh", serif;
+      font-weight: 400;
+      color: #231942;
+      line-height: 40px;
+    }
+  }
+  .beauty-image {
+    .info {
+      padding-left: 80px;
+    }
+    .star-img {
+      padding-right: 100px;
+    }
+    .good-vibe-img {
+      width: 100%;
+    }
+  }
+}
+/* beauty-for-a-better-section css end */
+
+/* natural-cream-sale-section css start */
+.natural-cream-sale-section {
+  margin-top: 100px;
+  background: url("./assets/img/NaturalCreamSale/naturalCreamBg.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .natural-cream-content {
+    padding-top: 80px;
+    & p,
+    h6 {
+      font-family: "Inter", sans-serif;
+    }
+    & h6 {
+      font-weight: 600;
+      line-height: 0px;
+      color: #231942;
+    }
+    & h2 {
+      font-family: "Katibeh", serif;
+      font-weight: 400;
+      line-height: 65px;
+      color: #231942;
+      text-transform: uppercase;
+    }
+    & p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #264958;
+      text-transform: uppercase;
+    }
+    .time {
+      margin: 20px 0px;
+      & span {
+        border: 2px solid #e2e2e3;
+        border-radius: 0px 50px 50px 0px;
+        padding: 30px 10px 10px 10px;
+        & p {
+          display: inline;
+          font-family: "Katibeh", serif;
+          font-size: 62px;
+          font-weight: 400;
+          line-height: 56px;
+          text-align: center;
+          color: #516c76;
+        }
+      }
+      .hour {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      .colon {
+        border: none;
+      }
+      .second-cox {
+        margin-left: 25px;
+      }
+    }
+  }
+}
+/* natural-cream-sale-section css end */
+
+/* testimonioal-section css start */
+.testimonioal-section {
+  background: url("./assets/img/testimonioal/Awesome.png") no-repeat;
+  background-position: right bottom;
+  margin-top: 80px;
+  .testimonioal-info {
+    padding: 30px 0px 0px 0px;
+    max-width: 600px;
+    & h5,
+    p,
+    h6,
+    small {
+      font-family: "Inter", sans-serif;
+    }
+    & h5,
+    h2,
+    p,
+    h6,
+    small {
+      text-transform: uppercase;
+    }
+    & h5 {
+      font-weight: 600;
+      line-height: 20px;
+      color: #231942;
+    }
+    & h2 {
+      font-family: "Katibeh", serif;
+      font-weight: 400;
+      line-height: 70px;
+      color: #231942;
+    }
+    & p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #264958;
+    }
+    & h6 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 10px;
+      margin-top: 40px;
+    }
+    & small {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #264958;
+    }
+  }
+}
+/* testimonioal-section css end */
+
+/* subscribe-our-newsletter css start */
+.subscribe-our-newsletter {
+  padding: 50px 0px;
+  margin-top: 80px;
+  background: url("./assets/img/subscribe/subscribe-bg.png") no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  border-radius: 20px;
+
+  & p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-top: 50px;
+  }
+  & input {
+    border: none;
+    width: 362px;
+    height: 41px;
+    border-radius: 10px;
+    padding-inline: 30px;
+    margin: 40px 10px 0px 10px;
+  }
+  & button {
+    width: 133px;
+    height: 41px;
+    border-radius: 10px;
+    border: 1px solid #516c76;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 40px 10px 0px 10px;
+    & a {
+      text-decoration: none;
+      color: #516c76;
+    }
+  }
+}
+/* subscribe-our-newsletter css end */
+
+/* brand-slider-section css start */
+.brand-slider-section {
+  padding: 50px 0px;
+  .brand-image {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* brand-slider-section css end */
+
+/* footer-section css start */
+.footer-section {
+  padding: 80px 0px 0px 0px;
+  background: url("./assets/img/footer-bg.png") no-repeat;
+  background-size: cover;
+  transition: all 0.5s ease;
+  color: #ffffff;
+  & a:hover{
+    color: #d6c6a1;
+  }
+
+  
+  .social-icon {
+    & i {
+      width: 30px;
+      height: 30px;
+      background: #ffffff;
+      border-radius: 50%;
+      text-align: cover;
+      line-height: 30px;
+      margin-right: 10px;
+      text-align: center;
+      color: #000000;
+      transition: all 0.5s ease;
+      &:hover{
+        background: #d6c6a1;
+      }
+    }
+  }
+  & h6 {
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 20px 0px;
+  }
+  & h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.07px;
+  }
+  .contact-us {
+    & i,
+    .location {
+      color: #d6c6a1;
+    }
+  }
+  & a,
+  p {
+    text-decoration: none;
+    color: #d2d3d2;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+  }
+  .footer-menu {
+    border-top: 2px solid #353535;
+    text-align: center;
+    padding: 20px 0px;
+    margin-top: 80px;
+    & a {
+      margin-inline: 40px;
+    }
+  }
+  .logo,
+  .privacy-policy,
+  .instagram {
+    margin-top: 10px;
+  }
+}
+/* footer-section css end */
+
+@media (max-width: 768px) {
+  .customer-favorites-section {
+    .eyeliner-collection {
+      padding: 150px 10px;
+      background-size: cover;
+    }
+  }
+  .footer-section {
+    .footer-menu {
+      & a {
+        margin-inline: 20px;
+      }
+    }
+  }
+  .customer-favorites-section {
+    .makeup-collection {
+      background-size: cover;
+    }
+    .lipstick-collection {
+      background-size: cover;
+    }
+    .eyeliner-collection {
+      background: url("./assets/img/customersFavorites/eyeliner.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  .natural-cream-sale-section {
+    background: #fef8f0;
+  }
+  .testimonioal-section {
+    background: #ffffff;
+    .testimonioal-info {
+      padding-bottom: 50px;
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media (max-width: 600px) {
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .subscribe-our-newsletter {
+    background-size: cover;
+    & p {
+      margin-top: 30px;
+    }
+    & input {
+      width: 280px;
+      margin: 20px 0px 0px 0px;
+    }
+    & button {
+      margin: 20px 0px 0px 0px;
+    }
   }
-  to {
-    transform: rotate(360deg);
+  .footer-section {
+    padding: 50px 0px 0px 0px;
+    text-align: center;
+    .logo,
+    .privacy-policy,
+    .instagram {
+      margin-top: 20px;
+    }
+    .logo {
+      margin-bottom: 30px;
+    }
+    .footer-menu {
+      margin-top: 50px;
+      & a {
+        margin-inline: 5px;
+      }
+    }
+  }
+  .beauty-for-a-better-section {
+    .beauty-image {
+      .info {
+        padding-left: 0px;
+        padding-top: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .subscribe-our-newsletter {
+    background-size: cover;
+    & input {
+      width: 200px;
+    }
+  }
+  .natural-cream-sale-section {
+    .natural-cream-content {
+      .time {
+        .second-cox {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+  .footer-section {
+    .footer-menu {
+      & a {
+        margin-inline: 1px;
+      }
+    }
   }
 }
