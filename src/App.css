@@ -328,7 +328,7 @@ body {
 
   .product-images{
     & img{
-      height: 220px;
+      height: 205px;
     }
   }
 
@@ -1417,7 +1417,7 @@ body {
 }
 .btn-primary{
   margin: 10px 0px;
-  width: 100%;
+  /* width: 100%; */
   background: #ffffff;
   color: #000000;
   border: 1px solid #000000;
@@ -1426,6 +1426,7 @@ body {
   font-weight: 500;
   line-height: 24px;
 }
+
 
 
 

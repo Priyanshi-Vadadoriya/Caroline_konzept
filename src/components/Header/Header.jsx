@@ -1,18 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Are you sure to log out?
+        </Modal.Title>
+      </Modal.Header>
+
+      <Modal.Footer className="d-flex justify-content-center">
+        <Button onClick={props.onHide} className="me-3">
+          Yes
+        </Button>
+        <Button onClick={props.onHide}>No</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 const Header = () => {
   const [fixnavbar, setFixnavbar] = useState(false);
-  const [smShow, setSmShow] = useState(false); 
+  const [smShow, setSmShow] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -22,9 +46,7 @@ const Header = () => {
         setFixnavbar(false);
       }
     });
-  },[]);
-
-  
+  }, []);
 
   return (
     <div>
@@ -59,13 +81,11 @@ const Header = () => {
                 <Link className="nav-link">About</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" >
-                Services
-                </Link>
+                <Link className="nav-link">Services</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/product">
-                Product
+                  Product
                 </Link>
               </li>
               <li className="nav-item">
@@ -93,70 +113,79 @@ const Header = () => {
       </nav>
       {/* Small Modal */}
       <div className="modal-wrapper">
-          <Modal
+        <Modal
           placement="right"
           className="modal-right"
           size="sm"
           show={smShow}
           onHide={() => setSmShow(false)}
           aria-labelledby="example-modal-sizes-title-sm"
-        > 
+        >
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-sm">
               Small Modal
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <div>
             <div>
-              <Button onClick={handleShow}>
-                Launch demo modal
-              </Button>
-            </div>
+              <div>
+                <Button onClick={handleShow}>Change Password</Button>
+              </div>
 
-            <div>
-              <Button onClick={handleShow}>
-                Launch demo modal
-              </Button>
+              <div>
+                <Button variant="primary" onClick={() => setModalShow(true)}>
+                  Logout
+                </Button>
+
+                <MyVerticallyCenteredModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                />
+              </div>
             </div>
-          </div>
           </Modal.Body>
-          </Modal>
+        </Modal>
       </div>
 
       <div className="change-password">
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label>Old Password</Form.Label>
+                <Form.Control type="password" autoFocus />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label>New Password</Form.Label>
+                <Form.Control type="password" autoFocus />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control type="password" autoFocus />
+              </Form.Group> 
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Password
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </div>
   );
