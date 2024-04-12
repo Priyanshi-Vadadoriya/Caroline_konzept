@@ -51,7 +51,7 @@ const BestProductSection = () => {
               >
                   {
                   bestProductdata.map((item) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={item.id}>
                     <div className='best-product-card d-flex justify-content-center align-items-center'>
                           <div className='col-6'>    
                             <div className='best-product-info'>

@@ -20,6 +20,7 @@ const BeautyForABetterSection = () => {
 
                 {beautyForBetterdata.map((item) => (
                   <div
+                  key={item.id}
                     className="experience"
                     style={{ background: item.background, border: item.border }}
                   >

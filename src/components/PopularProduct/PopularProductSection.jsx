@@ -53,25 +53,25 @@ const PopularProductSection = () => {
                 className="mySwiper"
               >
                 {popularProductdata.map((item) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={item.id}>
                     <div className="product-card">
                       <div className="product-box">
-                        <div className="text-center">
+                        <div className="text-center product-images">
                           <img src={item.image} alt="" className="img-fluid" />
                         </div>
                         <div>
                           <span>
-                            <h3 className="display-4">{item.price}</h3>
+                            <h3 className="display-5">{item.price}</h3>
                           </span>
-                          <div className="my-3 star-icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                          <div className="my-3 star-icon ps-4">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
                           </div>
-                          <h5 className="fw-bold">{item.title}</h5>
-                          <p className="mt-3">{item.data}</p>
+                          <h5 className="fw-bold ps-4">{item.title}</h5>
+                          <p className="mt-3 ps-4">{item.data}</p>
                           <AddToCartWishlist />
                         </div>
                       </div>

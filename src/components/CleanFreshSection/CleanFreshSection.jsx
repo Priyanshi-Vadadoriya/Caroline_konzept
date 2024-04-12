@@ -21,7 +21,7 @@ const CleanFreshSection = () => {
         <div className="clean-fresh-section" >
           <Swiper
             autoplay={{
-              delay: 2500,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             loop={true}
@@ -31,13 +31,14 @@ const CleanFreshSection = () => {
             }}
             className="mySwiper"
           >
-            {sliderHomedata.map((item) => (
-              <SwiperSlide>
+            {sliderHomedata.map((item,i) => (
+              <SwiperSlide key={i}>
                 <div
                   className="clean-fresh"
                   style={{ backgroundImage: `url(${item.image})` }}
+                  
                 >
-                  <div className="clean-fresh-info">
+                  <div className="clean-fresh-info " data-aos="fade-up">
                     <h1 className="display-5">{item.title}</h1>
                     <h3 className="display-7">{item.subtitle}</h3>
                     <p>{item.data}</p>
@@ -48,9 +49,9 @@ const CleanFreshSection = () => {
             ))}
           </Swiper>
           <div className="social-icon fs-5 mb-2">
-            <Link><i class="fa-brands fa-pinterest-p"></i></Link>
-            <Link><i class="fa-brands fa-twitter"></i></Link>
-            <Link><i class="fa-brands fa-facebook-f"></i></Link>
+            <Link><i className="fa-brands fa-pinterest-p"></i></Link>
+            <Link><i className="fa-brands fa-twitter"></i></Link>
+            <Link><i className="fa-brands fa-facebook-f"></i></Link>
           </div>
         </div>
       </section>

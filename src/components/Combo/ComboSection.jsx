@@ -50,7 +50,7 @@ const ComboSection = () => {
             >
             {
                 combodata.map((item)=>(
-                    <SwiperSlide>
+                <SwiperSlide key={item.id}>
                 <div className="combo-box">
                 <div className="combo-card">
                     <div className="combo-image text-center">

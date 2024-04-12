@@ -19,9 +19,9 @@ const Footer = () => {
                     <br /> gourami peamouth? M-war fish;
                   </h6>
                   <div className="social-icon">
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-pinterest-p"></i>
-                    <i class="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-pinterest-p"></i>
+                    <i className="fa-brands fa-twitter"></i>
                   </div>
                 </div>
               </div>
@@ -30,17 +30,17 @@ const Footer = () => {
                   <h3>Contact us</h3>
                   <p>
                     <Link>
-                      <i class="fa-solid fa-paper-plane me-2"></i>Greenville, Sc
+                      <i className="fa-solid fa-paper-plane me-2"></i>Greenville, Sc
                     </Link>
                   </p>
                   <p>
                     <Link>
-                      <i class="fa-solid fa-phone me-2"></i>+1-833-722-6338
+                      <i className="fa-solid fa-phone me-2"></i>+1-833-722-6338
                     </Link>
                   </p>
                   <p>
                     <Link className=" location">
-                      <i class="fa-solid fa-location-dot me-2"></i>
+                      <i className="fa-solid fa-location-dot me-2"></i>
                       Contact@101sbc.com
                     </Link>
                   </p>

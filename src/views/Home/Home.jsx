@@ -27,7 +27,7 @@ const Home = () => {
         {/*best-product-section end */}
 
         {/*Popular-Product-Section start */}
-        <PopularProductSection/>
+        <PopularProductSection />
         {/*Popular-Product-Section end */}
 
         {/* combo-section start */}
