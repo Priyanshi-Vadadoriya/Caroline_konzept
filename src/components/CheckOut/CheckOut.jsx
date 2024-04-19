@@ -156,7 +156,7 @@ const CheckOut = () => {
                       </div>
 
                       <p className='mt-5'>
-                      Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <Link>Privacy Policy.</Link>
+                        Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <Link>Privacy Policy.</Link>
                       </p>
                     </div>
 
@@ -165,7 +165,7 @@ const CheckOut = () => {
 
                       
                     <div className='text-center'>
-                      <input type='submit' value='SUBMIT' className='submit-btn'/>
+                      <button className='submit-btn'><Link to="/order">SUBMIT</Link></button>
                     </div>
                       </form>
                     </div>

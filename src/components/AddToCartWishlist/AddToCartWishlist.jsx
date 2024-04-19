@@ -14,7 +14,7 @@ const AddToCartWishlist = ({item}) => {
 
         <div className="cart" onClick={() => textmethod(item?.id)}>
         {/* {textmethod(item.id)} */}
-          <Link to="/productDetail" state={item?.id}  ><img src={carticon} alt="" /></Link>
+          <Link to={`/productDetail/${item?.id}`} state={item?.id}  ><img src={carticon} alt="" /></Link>
         </div>
       </div>
     </div>

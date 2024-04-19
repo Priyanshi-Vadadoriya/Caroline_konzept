@@ -36,7 +36,10 @@ const Header = () => {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setShow(true);
+    setSmShow(false); // Close small modal when Change Password button is clicked
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -133,9 +136,13 @@ const Header = () => {
               </div>
 
               <div>
-                <Button variant="primary" onClick={() => setModalShow(true)}>
+                <Button  onClick={() => {
+                  setModalShow(true);
+                }}>
                   Logout
                 </Button>
+
+                
 
                 <MyVerticallyCenteredModal
                   show={modalShow}
